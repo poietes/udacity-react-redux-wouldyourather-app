@@ -108,7 +108,7 @@ nav ul li a:hover {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: #efefef;
+  background-color: rgb(240, 240, 240);
   background-size: 36%;
   background-position: center;
   background-repeat: no-repeat;
@@ -176,7 +176,7 @@ nav ul li a:hover {
   width: 8.5rem;
   height: 8.5rem;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: rgb(220, 220, 220);
   background-size: 36%;
   background-position: center;
   background-repeat: no-repeat;
@@ -411,7 +411,7 @@ nav ul li a:hover {
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: rgb(220, 220, 220);
   background-size: 36%;
   background-position: center;
   background-repeat: no-repeat;
