@@ -31,7 +31,7 @@ class Login extends Component {
         <div className="login">
           <h1 className="login__title">Would You Rather App!</h1>
           <div className="login__icon">
-            <i class="fas fa-thumbs-up" />
+            <i className="fas fa-thumbs-up" />
           </div>
           <p>Please sign in to continue.</p>
           <form onSubmit={e => this.submitHandler(e)} className="login__form">
