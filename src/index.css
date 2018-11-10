@@ -84,10 +84,17 @@ nav ul li a {
   color: #eee;
   text-decoration: none;
   padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-nav ul li a.active {
+nav ul li a.active,
+nav ul li a.active:hover {
   color: rgb(219, 70, 70);
+}
+
+nav ul li a:hover {
+  color: #efd0d0;
 }
 
 /* Nav - authedUser */
