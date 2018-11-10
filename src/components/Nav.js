@@ -6,7 +6,7 @@ import { setAuthedUser } from "../actions/authedUser";
 class Nav extends Component {
   logoutHandler = e => {
     e.preventDefault();
-    this.props.dispatch(setAuthedUser());
+    this.props.dispatch(setAuthedUser(null));
   };
 
   render() {
