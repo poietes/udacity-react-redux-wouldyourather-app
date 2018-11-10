@@ -247,14 +247,6 @@ nav ul li a.active {
   background-color: #222;
 }
 
-.hbox__tab.hbox__tab--selected {
-  background-color: rgb(219, 70, 70);
-}
-
-.hbox__tab.hbox__tab--selected:hover {
-  background-color: #222;
-}
-
 /* Result */
 .result {
   width: 60%;
@@ -527,4 +519,12 @@ nav ul li a.active {
 .login__form__footer {
   margin: 1rem 0 0;
   text-align: center;
+}
+
+.login__form__error {
+  color: rgb(219, 70, 70);
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0 0 0.75rem;
+  display: none;
 }

@@ -3,8 +3,12 @@ import { connect } from "react-redux";
 import StaticPoll from "./StaticPoll";
 
 class HomePage extends Component {
-  tabHandler = () => {
-    console.log("click");
+  state = {
+    tab: "unanswered"
+  };
+
+  tabHandler = e => {
+    this.setState({ tab: e.target.dataset.tab });
   };
 
   render() {
@@ -13,22 +17,51 @@ class HomePage extends Component {
       <div className="hbox">
         <div className="hbox__header">
           <div
-            className="hbox__tab hbox__tab--selected"
-            onClick={this.tabHandler}
+            className="hbox__tab"
+            onClick={e => this.tabHandler(e)}
+            data-tab="unanswered"
+            style={
+              this.state.tab === "unanswered"
+                ? { backgroundColor: "#db4646" }
+                : { backgroundColor: "#bbb" }
+            }
           >
             Unanswered Questions
           </div>
-          <div className="hbox__tab" onClick={this.tabHandler}>
+          <div
+            className="hbox__tab"
+            onClick={e => this.tabHandler(e)}
+            data-tab="answered"
+            style={
+              this.state.tab === "answered"
+                ? { backgroundColor: "#db4646" }
+                : { backgroundColor: "#bbb" }
+            }
+          >
             Answered Questions
           </div>
         </div>
         <div className="hbox__body">
-          <div className="hbox__list hbox__list--unanswered">
+          <div
+            className="hbox__list"
+            style={
+              this.state.tab === "unanswered"
+                ? { display: "block" }
+                : { display: "none" }
+            }
+          >
             {unansweredQuestions.map(id => (
               <StaticPoll key={id} id={id} />
             ))}
           </div>
-          <div className="hbox__list hbox__list--answered">
+          <div
+            className="hbox__list"
+            style={
+              this.state.tab === "answered"
+                ? { display: "block" }
+                : { display: "none" }
+            }
+          >
             {answeredQuestions.map(id => (
               <StaticPoll key={id} id={id} />
             ))}
