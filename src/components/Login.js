@@ -9,6 +9,7 @@ class Login extends Component {
 
   changeHandler = e => {
     this.setState({ user: e.target.value });
+    document.getElementById("js-error").setAttribute("style", "display: none;");
   };
 
   submitHandler = e => {
@@ -16,6 +17,10 @@ class Login extends Component {
 
     if (this.state.user !== "") {
       this.props.dispatch(setAuthedUser(this.state.user));
+    } else {
+      document
+        .getElementById("js-error")
+        .setAttribute("style", "display: block;");
     }
   };
 
@@ -27,8 +32,11 @@ class Login extends Component {
           <h1 className="login__title">Welcome to the Would You Rather App!</h1>
           <p>Please sign in to continue.</p>
           <form onSubmit={e => this.submitHandler(e)} className="login__form">
-            <select onChange={e => this.changeHandler(e)}>
-              <option value="" disabled>
+            <select
+              onChange={e => this.changeHandler(e)}
+              value={this.state.user}
+            >
+              <option value="" key="default" disabled>
                 SELECT USER
               </option>
               {userIds.map(id => (
@@ -38,6 +46,9 @@ class Login extends Component {
               ))}
             </select>
             <div className="login__form__footer">
+              <div className="login__form__error" id="js-error">
+                Please select a user.
+              </div>
               <button className="btn btn--signin">SIGN IN</button>
             </div>
           </form>
