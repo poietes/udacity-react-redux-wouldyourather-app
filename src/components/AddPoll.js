@@ -32,8 +32,8 @@ class AddPoll extends Component {
     const { optionOneText, optionTwoText } = this.state;
     return (
       <div className="addpollbox">
+        <h1 className="addpoll__title">Create New Poll</h1>
         <div className="addpoll">
-          <h1 className="addpoll__title">Create New Poll</h1>
           <h3 className="addpoll__subtitle">Would you rather...</h3>
           <form onSubmit={this.submitHandler} className="addpoll__form">
             <input

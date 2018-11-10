@@ -140,6 +140,9 @@ nav ul li a:hover {
 .pollbox {
   width: 50%;
   margin: 4rem 25% 2rem;
+  background-color: #ddd;
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 .poll {
@@ -147,7 +150,7 @@ nav ul li a:hover {
   background-color: #f3f3f3;
   margin: 0 0 1rem;
   padding: 3% 0;
-  border-radius: 10px;
+  border-radius: 5px;
   color: #222;
 }
 
@@ -255,9 +258,12 @@ nav ul li a:hover {
 }
 
 /* Result */
-.result {
+.resultbox {
   width: 60%;
   margin: 3rem 20%;
+  background-color: #ddd;
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 .result__title {
@@ -267,9 +273,10 @@ nav ul li a:hover {
 
 .result__stats {
   background-color: #f3f3f3;
-  padding: 1.25rem 2rem;
-  margin-bottom: 2rem;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
   border-radius: 5px;
+  position: relative;
 }
 
 .result__stats p {
@@ -291,8 +298,6 @@ nav ul li a:hover {
   position: absolute;
   background-color: rgb(219, 70, 70);
   height: 100%;
-  /* border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px; */
   border-radius: 5px;
 }
 
@@ -309,11 +314,33 @@ nav ul li a:hover {
   padding-right: 0.2rem;
 }
 
+.result__your-vote {
+  position: absolute;
+  top: -0.6rem;
+  right: -1.1rem;
+  transform: rotate(16deg);
+}
+
+.result__your-vote i {
+  font-size: 4rem;
+  color: #222;
+  z-index: 100;
+}
+
+.result__your-vote span {
+  color: #fff;
+  font-size: 0.7rem;
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  top: 1.1rem;
+  left: 0;
+}
+
 .result__avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  /* background-color: #fff; */
   background-size: 36%;
   background-position: center;
   background-repeat: no-repeat;
@@ -323,7 +350,14 @@ nav ul li a:hover {
 .result__author {
   text-align: center;
   font-size: 0.8rem;
-  color: #444;
+  color: #222;
+  margin: 0.5rem 0;
+}
+
+.result__author span {
+  margin-bottom: 0.15rem;
+  display: block;
+  font-size: 0.6rem;
 }
 
 /* Leaderboard */
@@ -339,7 +373,6 @@ nav ul li a:hover {
   padding: 0.5rem 0 1.3rem;
   text-align: center;
   letter-spacing: 0.1rem;
-  text-transform: uppercase;
 }
 
 /* Score */
@@ -353,6 +386,7 @@ nav ul li a:hover {
   box-sizing: border-box;
   border-radius: 5px;
   color: #222;
+  position: relative;
 }
 
 .score:last-child {
@@ -381,6 +415,25 @@ nav ul li a:hover {
   background-size: 36%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.fa-trophy {
+  position: absolute;
+  left: 1.6rem;
+  top: 1.1rem;
+  font-size: 1.5rem;
+}
+
+.score:nth-child(2) .fa-trophy {
+  color: #ffbf00;
+}
+
+.score:nth-child(3) .fa-trophy {
+  color: #a8a8a8;
+}
+
+.score:nth-child(4) .fa-trophy {
+  color: #965a38;
 }
 
 .score__name {
@@ -450,14 +503,14 @@ nav ul li a:hover {
 }
 
 .addpoll__title {
-  margin: 0 0 1.5rem;
+  margin: 0.5rem 0 1.5rem;
   padding: 0;
   font-size: 2.4rem;
   font-weight: lighter;
 }
 
 .addpoll__subtitle {
-  margin: 0 0 1rem;
+  margin: 0.4rem 0 1.2rem;
   padding: 0 0 0 0.2rem;
 }
 
@@ -466,7 +519,6 @@ nav ul li a:hover {
   margin: 0;
   padding: 0.2rem 0 0.6rem 0.2rem;
   color: #bbb;
-  /* font-weight: bold; */
 }
 
 .addpoll__form input {
@@ -494,10 +546,13 @@ nav ul li a:hover {
 .loginbox {
   width: 40%;
   margin: 3rem auto 1rem auto;
+  border-radius: 5px;
+  background-color: #ddd;
+  padding: 1rem;
 }
 
 .login {
-  background-color: #fefefe;
+  background-color: #f3f3f3;
   padding: 2rem 1rem;
   border-radius: 5px;
 }
@@ -505,10 +560,23 @@ nav ul li a:hover {
 .login__title {
   margin: 0 0 2rem;
   text-align: center;
+  font-size: 2rem;
+}
+
+.login__icon {
+  text-align: center;
+  margin: 1rem 0 2.5rem;
+}
+
+.login__icon i {
+  font-size: 5rem;
+  color: #aaa;
+  opacity: 0.3;
 }
 
 .login p {
   text-align: center;
+  font-size: 0.8rem;
 }
 
 .login_form {
@@ -516,7 +584,7 @@ nav ul li a:hover {
 }
 
 .login__form select {
-  width: 50%;
+  width: 70%;
   height: 2rem;
   font-size: 1rem;
   margin: 0 auto;

@@ -6,6 +6,7 @@ class Score extends Component {
     return (
       <div className="score">
         <div className="score__col-l">
+          <i className="fas fa-trophy" />
           <div
             className="score__avatar"
             style={{ backgroundImage: `url(${avatarURL})` }}

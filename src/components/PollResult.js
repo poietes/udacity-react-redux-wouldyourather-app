@@ -21,46 +21,53 @@ class PollResult extends Component {
     const { question, user, userAnswer } = this.props;
 
     return (
-      <div className="result">
+      <div className="resultbox">
         <h1 className="result__title">Poll Results</h1>
-        <div className="result__stats">
-          <p>Would you rather {question.optionOne.text}?</p>
-          <div className="result__bar">
-            <div
-              className="result__bar__pct"
-              style={{ width: `${this.getPct("optionOne")}%` }}
-            >
-              <span>{this.getPct("optionOne")}%</span>
+        <div className="result">
+          <div className="result__stats">
+            <p>Would you rather {question.optionOne.text}?</p>
+            <div className="result__bar">
+              <div
+                className="result__bar__pct"
+                style={{ width: `${this.getPct("optionOne")}%` }}
+              >
+                <span>{this.getPct("optionOne")}%</span>
+              </div>
             </div>
+            <div className="result__votes">{this.getVotes("optionOne")}</div>
+            {userAnswer === "optionOne" && (
+              <div className="result__your-vote">
+                <i class="fas fa-certificate" />
+                <span>YOUR VOTE</span>
+              </div>
+            )}
           </div>
-          <div className="result__votes">{this.getVotes("optionOne")}</div>
-          {userAnswer === "optionOne" && (
-            <div className="result__your-vote">Your Vote</div>
-          )}
-        </div>
-        <div className="result__stats">
-          <p>Would you rather {question.optionTwo.text}?</p>
-          <div className="result__bar">
-            <div
-              className="result__bar__pct"
-              style={{ width: `${this.getPct("optionTwo")}%` }}
-            >
-              <span>{this.getPct("optionTwo")}%</span>
+          <div className="result__stats">
+            <p>Would you rather {question.optionTwo.text}?</p>
+            <div className="result__bar">
+              <div
+                className="result__bar__pct"
+                style={{ width: `${this.getPct("optionTwo")}%` }}
+              >
+                <span>{this.getPct("optionTwo")}%</span>
+              </div>
             </div>
+            <div className="result__votes">{this.getVotes("optionTwo")}</div>
+            {userAnswer === "optionTwo" && (
+              <div className="result__your-vote">
+                <i className="fas fa-certificate" />
+                <span>YOUR VOTE</span>
+              </div>
+            )}
           </div>
-          <div className="result__votes">{this.getVotes("optionTwo")}</div>
-          {userAnswer === "optionTwo" && (
-            <div className="result__your-vote">Your Vote</div>
-          )}
-        </div>
-        <div
-          className="result__avatar"
-          style={{ backgroundImage: `url(..${user.avatarURL})` }}
-        />
-        <div className="result__author">
-          Author
-          <br />
-          {user.name}
+          <div
+            className="result__avatar"
+            style={{ backgroundImage: `url(..${user.avatarURL})` }}
+          />
+          <div className="result__author">
+            <span>Author</span>
+            {user.name}
+          </div>
         </div>
       </div>
     );
