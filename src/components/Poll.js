@@ -80,7 +80,7 @@ class Poll extends Component {
   }
 }
 
-function mapStateToProps({ authedUser, users, questions }, { id }) {
+function mapStateToProps({ users, questions }, { id }) {
   const question = questions[id];
 
   return {
