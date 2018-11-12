@@ -18,15 +18,22 @@ class AddPoll extends Component {
     e.preventDefault();
 
     const { dispatch } = this.props;
+    const { optionOneText, optionTwoText } = this.state;
 
-    dispatch(
-      handleSaveQuestion({
-        optionOneText: this.state.optionOneText,
-        optionTwoText: this.state.optionTwoText
-      })
-    );
+    if (optionOneText === "" || optionTwoText === "") {
+      document
+        .getElementById("js-error")
+        .setAttribute("style", "display: block;");
+    } else {
+      dispatch(
+        handleSaveQuestion({
+          optionOneText,
+          optionTwoText
+        })
+      );
 
-    this.setState({ toHome: true });
+      this.setState({ toHome: true });
+    }
   };
 
   render() {
@@ -60,6 +67,9 @@ class AddPoll extends Component {
               onChange={this.handleChange}
             />
             <div className="addpoll__form__footer">
+              <div className="addpoll__form__error" id="js-error">
+                Please finish your sentence.
+              </div>
               <button className="btn btn--submit">SUBMIT</button>
             </div>
           </form>

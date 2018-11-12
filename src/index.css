@@ -613,6 +613,13 @@ nav ul li a:hover {
   padding: 1.5rem 0 0.5rem;
 }
 
+.addpoll__form__error {
+  color: rgb(219, 70, 70);
+  font-size: 0.8rem;
+  margin: 0 0 1rem;
+  display: none;
+}
+
 /* Loginbox */
 .loginbox {
   width: 90%;
