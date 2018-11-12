@@ -2,10 +2,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PollResult from "./PollResult";
 import Poll from "./Poll";
+import { Redirect } from "react-router-dom";
 
 class DetailPage extends Component {
   render() {
-    const { id, isAnswered } = this.props;
+    const { id, isAnswered, isValidID } = this.props;
+
+    if (isValidID === false) {
+      return <Redirect to="/404" />;
+    }
 
     if (isAnswered) {
       return <PollResult id={id} />;
@@ -15,18 +20,16 @@ class DetailPage extends Component {
   }
 }
 
-function mapStateToProps({ authedUser, users }, props) {
+function mapStateToProps({ authedUser, users, questions }, props) {
   const { id } = props.match.params;
-  let isAnswered = null;
-  if (users[authedUser]) {
-    isAnswered =
-      Object.keys(users[authedUser].answers).includes(id) === true
-        ? true
-        : false;
-  }
+  const isValidID = questions[id] ? true : false;
+  const isAnswered =
+    Object.keys(users[authedUser].answers).includes(id) === true ? true : false;
+
   return {
     id,
-    isAnswered
+    isAnswered,
+    isValidID
   };
 }
 

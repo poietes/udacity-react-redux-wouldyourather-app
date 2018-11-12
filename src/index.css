@@ -603,3 +603,18 @@ nav ul li a:hover {
   margin: 0 0 0.75rem;
   display: none;
 }
+
+/* Error 404 */
+.errorbox {
+  width: 50%;
+  margin: 3rem auto;
+}
+
+.errorbox a {
+  color: rgb(219, 70, 70);
+  transform: all 0.3s;
+}
+
+.errorbox a:hover {
+  color: #444;
+}

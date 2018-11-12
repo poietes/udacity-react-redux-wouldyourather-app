@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 import { handleInitialData } from "../actions/shared";
 import Nav from "./Nav";
 import HomePage from "./HomePage";
 import Leaderboard from "./Leaderboard";
 import DetailPage from "./DetailPage";
-// import ErrorPage from "./ErrorPage";
+import ErrorPage from "./ErrorPage";
 import Login from "./Login";
 import AddPoll from "./AddPoll";
 
@@ -23,7 +28,15 @@ class App extends Component {
         <Router>
           <div>
             <Nav />
-            <Login />
+            <Switch>
+              <Route path="/" exact component={Login} />
+              <Route path="/login" component={Login} />
+              <Redirect from="/add" to="/login" />
+              <Redirect from="/leaderboard" to="/login" />
+              <Redirect from="/questions/:id" to="/login" />
+              <Route path="/404" component={ErrorPage} />
+              <Route component={ErrorPage} />
+            </Switch>
           </div>
         </Router>
       );
@@ -32,10 +45,15 @@ class App extends Component {
         <Router>
           <div>
             <Nav />
-            <Route path="/" exact component={HomePage} />
-            <Route path="/add" component={AddPoll} />
-            <Route path="/leaderboard" component={Leaderboard} />
-            <Route path="/questions/:id" component={DetailPage} />
+            <Switch>
+              <Route path="/" exact component={HomePage} />
+              <Route path="/add" component={AddPoll} />
+              <Route path="/leaderboard" component={Leaderboard} />
+              <Route path="/questions/:id" component={DetailPage} />
+              <Route path="/login" component={Login} />
+              <Route path="/404" component={ErrorPage} />
+              <Route component={ErrorPage} />
+            </Switch>
           </div>
         </Router>
       );

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleSaveQuestion } from "../actions/shared";
+import { Redirect } from "react-router-dom";
 
 class AddPoll extends Component {
   state = {
     optionOneText: "",
-    optionTwoText: ""
+    optionTwoText: "",
+    toHome: false
   };
 
   handleChange = e => {
@@ -24,12 +26,16 @@ class AddPoll extends Component {
       })
     );
 
-    // redirect?
-    // reset setstate
+    this.setState({ toHome: true });
   };
 
   render() {
-    const { optionOneText, optionTwoText } = this.state;
+    const { optionOneText, optionTwoText, toHome } = this.state;
+
+    if (toHome) {
+      return <Redirect to="/" />;
+    }
+
     return (
       <div className="addpollbox">
         <h1 className="addpoll__title">Create New Poll</h1>
