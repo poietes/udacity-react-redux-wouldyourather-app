@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Score extends Component {
   render() {
@@ -35,5 +36,9 @@ class Score extends Component {
     );
   }
 }
+
+Score.propTypes = {
+  score: PropTypes.object.isRequired
+};
 
 export default Score;
