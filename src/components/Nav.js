@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { setAuthedUser } from "../actions/authedUser";
 
@@ -53,4 +53,4 @@ function mapStatetoProps({ authedUser, users }) {
   };
 }
 
-export default connect(mapStatetoProps)(Nav);
+export default withRouter(connect(mapStatetoProps)(Nav));
