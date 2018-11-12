@@ -37,7 +37,7 @@ class PollResult extends Component {
             <div className="result__votes">{this.getVotes("optionOne")}</div>
             {userAnswer === "optionOne" && (
               <div className="result__your-vote">
-                <i class="fas fa-certificate" />
+                <i className="fas fa-certificate" />
                 <span>YOUR VOTE</span>
               </div>
             )}
