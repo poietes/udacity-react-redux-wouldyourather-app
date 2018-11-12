@@ -1,8 +1,32 @@
 # Would You Rather Project
 
-The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the `_DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
+This repo is cloned from https://github.com/udacity/reactnd-project-would-you-rather-starter and developed for the final assessment project for Udacity's React & Redux course.
 
-Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
+## TL;DR
+
+To get started right away:
+
+- install all project dependencies with `npm install`
+- start the development server with `npm start`
+
+## What You're Getting
+
+```bash
+├── README.md - This file.
+├── package.json # npm package manager file.
+├── public
+│   ├── img # Images for this app.
+│   ├── favicon.ico
+│   └── index.html
+└── src
+    ├── actions
+    ├── componenets
+    ├── middleware
+    ├── reducers
+    ├── utils
+    ├── index.css # Global styles.
+    └── index.js
+```
 
 ## Data
 
@@ -92,7 +116,3 @@ _Parameters_: Object that contains the following properties: `authedUser`, `qid`
 | authedUser | String | The id of the user who answered the question                                            |
 | qid        | String | The id of the question that was answered                                                |
 | answer     | String | The option the user selected. The value should be either `"optionOne"` or `"optionTwo"` |
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests. For details, check out [CONTRIBUTING.md](https://github.com/udacity/reactnd-project-would-you-rather-starter/blob/master/CONTRIBUTING.md).
