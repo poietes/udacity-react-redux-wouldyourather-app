@@ -69,6 +69,14 @@ nav {
   color: #eee;
 }
 
+@media (max-width: 600px) {
+  nav {
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 6rem;
+  }
+}
+
 /* Nav - menus */
 nav ul {
   margin: 0;
@@ -86,6 +94,8 @@ nav ul li a {
   padding: 0.5rem;
   cursor: pointer;
   transition: all 0.3s;
+  flex: 0 1 auto;
+  text-align: left;
 }
 
 nav ul li a.active,
@@ -97,11 +107,25 @@ nav ul li a:hover {
   color: #efd0d0;
 }
 
+@media (max-width: 600px) {
+  nav ul {
+    flex: 0 1 100%;
+    text-align: center;
+  }
+}
+
 /* Nav - authedUser */
 .authedUser {
   font-size: 0.8rem;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 600px) {
+  .authedUser {
+    flex: 0 1 100%;
+    justify-content: center;
+  }
 }
 
 .authedUser-avatar {
@@ -138,20 +162,28 @@ nav ul li a:hover {
 
 /* Poll */
 .pollbox {
-  width: 50%;
-  margin: 4rem 25% 2rem;
+  width: 90%;
+  max-width: 38rem;
+  margin: 4rem auto 2rem;
   background-color: #ddd;
   padding: 1rem;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .poll {
   display: flex;
   background-color: #f3f3f3;
   margin: 0 0 1rem;
-  padding: 3% 0;
+  padding: 1.5rem 0;
   border-radius: 5px;
   color: #222;
+}
+
+@media (max-width: 600px) {
+  .poll {
+    flex-direction: column;
+  }
 }
 
 .poll:last-child {
@@ -168,8 +200,13 @@ nav ul li a:hover {
 
 .poll__col--right {
   flex: 0 1 auto;
-  border-left: 1px solid #ddd;
   padding-left: 1.75rem;
+}
+
+@media (max-width: 600px) {
+  .poll__col--right {
+    border-left: 0;
+  }
 }
 
 .poll__avatar {
@@ -219,8 +256,9 @@ nav ul li a:hover {
 
 /* hbox */
 .hbox {
-  width: 60%;
-  margin: 3.5rem 20% 3rem 20%;
+  width: 90%;
+  max-width: 38rem;
+  margin: 3.5rem auto 3rem auto;
   padding: 0;
 }
 
@@ -259,11 +297,13 @@ nav ul li a:hover {
 
 /* Result */
 .resultbox {
-  width: 60%;
-  margin: 3rem 20%;
+  width: 90%;
+  max-width: 38rem;
+  margin: 3rem auto;
   background-color: #ddd;
   padding: 1rem;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .result__title {
@@ -362,8 +402,9 @@ nav ul li a:hover {
 
 /* Leaderboard */
 .leaderboard {
-  width: 60%;
-  margin: 3rem 20%;
+  width: 90%;
+  max-width: 38rem;
+  margin: 3rem auto;
   padding: 1rem;
   background-color: #ddd;
   border-radius: 5px;
@@ -405,6 +446,34 @@ nav ul li a:hover {
 
 .score__col-r {
   flex: 0 0 6rem;
+}
+
+@media (max-width: 600px) {
+  .score {
+    flex-direction: column;
+  }
+
+  .score__col-l {
+    flex: 0 1 100%;
+    text-align: center;
+  }
+
+  .score__col-m {
+    flex: 0 1 50%;
+    margin: 0.5rem 0 1rem;
+    padding: 0;
+    text-align: center;
+  }
+
+  .score__col-r {
+    flex: 0 1 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .score__avatar {
+    margin: 0 auto;
+  }
 }
 
 .score__avatar {
@@ -488,11 +557,13 @@ nav ul li a:hover {
 
 /* Addpoll */
 .addpollbox {
-  width: 60%;
-  margin: 3rem 20%;
+  width: 90%;
+  max-width: 38rem;
+  margin: 3rem auto;
   background-color: #ddd;
   border-radius: 5px;
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .addpoll {
@@ -544,11 +615,13 @@ nav ul li a:hover {
 
 /* Loginbox */
 .loginbox {
-  width: 40%;
+  width: 90%;
+  max-width: 38rem;
   margin: 3rem auto 1rem auto;
   border-radius: 5px;
   background-color: #ddd;
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .login {
