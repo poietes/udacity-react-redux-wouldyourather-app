@@ -26,10 +26,14 @@ class Login extends Component {
   };
 
   render() {
-    const { userIds, users, authedUser } = this.props;
+    const { userIds, users, authedUser, location } = this.props;
 
     if (authedUser) {
-      return <Redirect to="/" />;
+      return location.state.from !== undefined ? (
+        <Redirect to={location.state.from} />
+      ) : (
+        <Redirect to="/" />
+      );
     }
 
     return (

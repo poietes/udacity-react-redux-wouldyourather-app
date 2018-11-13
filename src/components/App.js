@@ -31,9 +31,27 @@ class App extends Component {
             <Switch>
               <Route path="/" exact component={Login} />
               <Route path="/login" component={Login} />
-              <Redirect from="/add" to="/login" />
-              <Redirect from="/leaderboard" to="/login" />
-              <Redirect from="/questions/:id" to="/login" />
+              <Redirect
+                from="/add"
+                to={{
+                  pathname: "/login",
+                  state: { from: "/add" }
+                }}
+              />
+              <Redirect
+                from="/leaderboard"
+                to={{
+                  pathname: "/login",
+                  state: { from: "/leaderboard" }
+                }}
+              />
+              <Redirect
+                from="/questions/:id"
+                to={{
+                  pathname: "/login",
+                  state: { from: "/questions/:id" }
+                }}
+              />
               <Route path="/404" component={ErrorPage} />
               <Route component={ErrorPage} />
             </Switch>
